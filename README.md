@@ -1,3 +1,4 @@
 ﻿# LACOCO Article LP Preview
 
-Internal preview draft. Official reference assets require permission or replacement before production use.
+Current questionnaire article LP preview for Vercel/GitHub deployment.
+

@@ -1,130 +1,551 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <title>ラココ 記事LPドラフト</title>
-  <link rel="stylesheet" href="./styles.css">
+  <title>PR｜ラココ 夏前脱毛アンケート</title>
+  <style>
+    html { font-size: 62.5%; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    img, video { max-width: 100%; display: block; }
+    #survey-container {
+      max-width: 650px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: #fff;
+    }
+    .fv {
+      position: relative;
+      background: #fff;
+    }
+    .fv-main {
+      width: 94%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .fv-art {
+      position: relative;
+      width: 100%;
+      padding: 8px 0;
+      background: #fff7fb;
+    }
+    .fv-art::before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      left: 2.7%;
+      top: 9.7%;
+      width: 18.8%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 34% 26%, #fff 0 24%, #fff9fb 25% 58%, #f1e4ff 59% 100%);
+      border: 4px solid #f5b3d2;
+      box-shadow: 0 0 0 4px rgba(255,255,255,.85), 0 0 18px rgba(56, 184, 255, .45);
+    }
+    .fv-art::after {
+      content: "夏前\A 30秒\A 診断";
+      white-space: pre;
+      position: absolute;
+      z-index: 3;
+      left: 2.7%;
+      top: 12.2%;
+      width: 18.8%;
+      color: #6d7edc;
+      text-align: center;
+      font-size: clamp(1.6rem, 5vw, 3.6rem);
+      line-height: 1.12;
+      font-weight: 900;
+      font-family: "Yu Gothic", "Hiragino Sans", Meiryo, sans-serif;
+    }
+    .fv-art::before,
+    .fv-art::after {
+      display: none;
+    }
+    .video-header {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      pointer-events: none;
+    }
+    .campaign {
+      position: absolute;
+      z-index: 2;
+      top: 2.9%;
+      left: 22%;
+      color: #fff;
+      font-size: 2.4rem;
+      font-weight: 900;
+      text-shadow: 0 2px 4px rgba(0,0,0,.35);
+    }
+    .month {
+      position: absolute;
+      top: -28%;
+      left: -12%;
+      font-size: 3.8rem;
+      color: #fff100;
+    }
+    .kiji-con {
+      padding: 10px;
+      background: #feecff;
+    }
+    .survey-section {
+      display: none;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s ease, transform .8s ease;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px 10px 20px;
+      background: #fff;
+    }
+    .survey-section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .survey-section.no-bd {
+      padding: 30px 0 20px !important;
+      background: none !important;
+    }
+    .q-content {
+      padding: 0 2px;
+    }
+    .qimg {
+      width: 60%;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h2.q-ttl {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 1.6rem;
+      line-height: 1.45;
+      font-weight: bold;
+    }
+    .options input[type="radio"] { display: none; }
+    .options label {
+      display: block;
+      margin-bottom: 10px;
+      padding: 15px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      background: #fff;
+      font-size: 1.4rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .2s;
+    }
+    .options label:active {
+      background: #fff9c4;
+      transform: scale(.98);
+    }
+    .options label.selected {
+      border-color: #ff5e78;
+      background: #fff9c4;
+    }
+    .article-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 12px;
+      border-radius: 0;
+    }
+    .hero-copy {
+      padding: 18px 14px 24px;
+      text-align: center;
+      background: #fff;
+    }
+    .hero-copy .pr {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 4px 10px;
+      border-radius: 99px;
+      background: #333;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 900;
+    }
+    .hero-copy h1 {
+      margin-bottom: 10px;
+      font-size: 3rem;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+    .hero-copy p {
+      margin: 0;
+      font-size: 1.55rem;
+      font-weight: 800;
+    }
+    .red { color: #e60033; }
+    .marker {
+      background: linear-gradient(transparent 58%, #fff100 58%);
+      font-weight: 900;
+    }
+    .movimg { position: relative; }
+    .article-block {
+      padding: 16px 10px 22px;
+      background: #fff;
+    }
+    .article-block h2 {
+      margin-bottom: 12px;
+      text-align: center;
+      font-size: 2rem;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+    .article-block p {
+      font-size: 1.42rem;
+      font-weight: 700;
+    }
+    .shock {
+      margin: 16px 0;
+      padding: 14px;
+      border: 3px solid #e60033;
+      background: #fff9d9;
+      text-align: center;
+      font-size: 2rem;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+    .cta {
+      display: inline-block;
+      width: 100%;
+      margin: 18px 0;
+      animation: floatY 3.8s ease-in-out infinite;
+      text-decoration: none;
+    }
+    .cta-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .cta-btn {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 64px;
+      padding: 14px 48px 14px 20px;
+      border: 3px solid #fff;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #ff9800, #f04b20);
+      color: #fff;
+      font-size: 1.75rem;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 5px 0 #b73000, 0 0 0 2px #ff9c38;
+    }
+    .cta-btn::after {
+      content: "›";
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #fff;
+      color: #f04b20;
+      font-size: 3rem;
+      line-height: 1;
+      transform: translateY(-50%);
+    }
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .offer {
+      margin: 12px 0;
+      padding: 14px;
+      border: 4px solid #e60033;
+      background: #fff;
+      text-align: center;
+    }
+    .offer-title {
+      color: #e60033;
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1.3;
+    }
+    .price {
+      color: #e60033;
+      font-size: 1.6rem;
+      font-weight: 900;
+    }
+    .price b {
+      font-size: 5.6rem;
+      line-height: 1;
+    }
+    .note {
+      color: #666;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+    .source-card {
+      margin: 14px 0 18px;
+      padding: 16px 12px;
+      border: 2px solid #ffd3e3;
+      background: #fff8fb;
+    }
+    .source-card h3 {
+      margin-bottom: 10px;
+      color: #e60058;
+      text-align: center;
+      font-size: 1.65rem;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+    .source-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .source-list li {
+      position: relative;
+      margin-bottom: 8px;
+      padding-left: 1.4em;
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .source-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #ff5e78;
+      font-weight: 900;
+    }
+    .toggle { display: none; }
+    .Label {
+      display: block;
+      position: relative;
+      color: #393939;
+      font-weight: bold;
+      background:#fff3f7;
+      line-height: 1.2;
+      border-radius: 10px;
+    }
+    .Label .box {
+      padding: 20px 30px 20px 10px;
+      background-color: #ffd3e3;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+    .Label .q-icon {
+      width: 1.7em;
+      height: 1.7em;
+      margin-right: .7em;
+      border-radius: 50%;
+      background: #ff5e78;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .Label::before {
+      content:"";
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid #ff8fb8;
+      border-right: 2px solid #ff8fb8;
+      position: absolute;
+      top: calc(45% - 3px);
+      right: 15px;
+      transform: rotate(135deg);
+    }
+    .content {
+      height: 0;
+      margin-bottom: 10px;
+      overflow: hidden;
+      background-color: #fff3f7;
+      border-radius: 0 0 10px 10px;
+      transition: all .3s;
+    }
+    .toggle:checked + .Label + .content {
+      height: auto;
+      padding: 1em;
+    }
+    .toggle:checked + .Label::before { transform: rotate(-45deg); }
+    .toggle:checked + .Label { border-radius: 10px 10px 0 0; }
+    .qa-txt {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .inner {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #fff;
+    }
+    @media screen and (min-width: 750px) {
+      .campaign { font-size: 3.6rem; left: 21%; }
+      .month { font-size: 5.4rem; }
+    }
+  </style>
 </head>
 <body>
-  <main class="page-shell">
-    <header class="hero">
-      <img src="https://la-coco.com/images/kv01_2025spring_sp.webp" alt="LACOCO official visual reference" class="hero-image">
-      <div class="hero-copy">
-        <p class="eyebrow">PR | LACOCO</p>
-        <h1>脱毛したいけど、<br>安すぎる広告ほど<br>不安になるあなたへ</h1>
-        <p>まずは契約ではなく、総額・範囲・痛み・空き枠を確認するところから。</p>
+  <main id="survey-container">
+    <header class="fv" style="width:100.5%;">
+      <div class="fv-art">
+        <img src="assets/lacoco_fv_generated_trace.png" alt="夏前の脱毛アンケート。水着もお泊まりも自己処理で焦る前に、顔+VIO込みの全身脱毛を確認。" class="fv-main">
       </div>
     </header>
 
-    <section class="survey active" data-step="1">
-      <p class="step">Question 1</p>
-      <h2>脱毛、気になっているのに予約できていない理由は？</h2>
-      <div class="choice-list">
-        <button class="choice" data-next>月額が安いほど、あとで高くなりそう</button>
-        <button class="choice" data-next>痛そうだし、続けられるか不安</button>
-        <button class="choice" data-next>VIOや身体の相談が恥ずかしい</button>
-        <button class="choice" data-next>自己処理で何とかしている</button>
-      </div>
-    </section>
+    <div class="kiji-con">
+      <section class="survey-section active" id="sec1">
+        <div class="q-content">
+          <img src="assets/q1_label.svg" alt="Question 1" class="qimg">
+          <h2 class="q-ttl">夏の予定前、<br>自己処理でいちばん焦りそうなのは？</h2>
+          <div style="margin-bottom:20px;">
+            <img src="assets/img01_summer_selfcare_real_manga.png" alt="旅行前夜、開いたスーツケースの横でシェーバーを持ち、自己処理に焦る女性。明日旅行なのにまだ剃ってない、水着もお泊まりもVIOが気になるという吹き出し入り。" class="article-img">
+          </div>
+          <div class="options">
+            <label><input type="radio" name="q1"><span>水着まわりのVIO</span></label>
+            <label><input type="radio" name="q1"><span>ノースリーブのワキ</span></label>
+            <label><input type="radio" name="q1"><span>宿泊前の脚・腕</span></label>
+            <label><input type="radio" name="q1"><span>自分で見えない背中・うなじ</span></label>
+          </div>
+        </div>
+      </section>
 
-    <section class="survey" data-step="2">
-      <p class="step">Question 2</p>
-      <h2>予約前に確認できたら安心なことは？</h2>
-      <div class="choice-list">
-        <button class="choice" data-next>総額と追加費用</button>
-        <button class="choice" data-next>顔・VIOを含む範囲</button>
-        <button class="choice" data-next>痛みや通うペース</button>
-        <button class="choice" data-next>勧誘されないか</button>
-      </div>
-    </section>
+      <section class="survey-section" id="sec2">
+        <div class="movimg">
+          <img src="assets/img02_image2_summer_selfcare.png" alt="夏の予定前に自己処理でバタバタしてないかを問いかけ、水着もお泊まりも直前に焦りたくない気持ちを表す画像" class="article-img">
+        </div>
 
-    <section class="result" id="article-start">
-      <p class="kicker">アンケート回答ありがとうございます</p>
-      <h2>その不安、かなり自然です。</h2>
-      <p>脱毛広告は「月額」だけが大きく見えることが多く、いざ調べると総額・範囲・条件がわかりにくいこともあります。だから、予約前に止まってしまうのは弱気ではありません。むしろ、ちゃんと確認しようとしているサインです。</p>
-    </section>
+        <div class="article-block">
+          <h2>VIOだけで予約するの、<br><span class="red">ちょっと気まずくないですか？</span></h2>
+          <p>でも夏前は、VIOだけじゃなく、ワキ・脚・腕・背中・うなじ・顔まわりまで一気に気になりがち。</p>
+          <p>だから、VIO単体で聞くよりも<span class="marker">顔+VIO込みの全身脱毛</span>として、まとめて確認する方が自然です。</p>
+        </div>
 
-    <section class="scene">
-      <div>
-        <p class="kicker">Self Care Loop</p>
-        <h2>でも、自己処理の不安は毎回戻ってくる。</h2>
-        <p>急な予定、薄手の服、近距離で話す日。前日にあわてて処理して、肌が荒れて、また隠したくなる。脱毛を迷っている人の本音は「キレイになりたい」だけではなく、「毎回ヒヤヒヤする生活を終わらせたい」なのかもしれません。</p>
-      </div>
-      <figure>
-        <img src="https://la-coco.com/images/intro_img.webp" alt="LACOCO official salon visual reference">
-        <figcaption>公式サイト掲載画像を参照利用。公開前に利用許諾またはImage2/owned素材への差し替えが必要です。</figcaption>
-      </figure>
-    </section>
+        <div class="q-content">
+          <img src="assets/q2_label.svg" alt="Question 2" class="qimg">
+          <h2 class="q-ttl">夏前に自己処理を見直せるなら、<br>どの予定でラクになりたいですか？</h2>
+          <img src="assets/img03_many_parts_real_manga.png" alt="夏前に焦る部位は1か所じゃない。気になるところをまとめて確認したいという吹き出し入り画像。" class="article-img">
+          <div class="options">
+            <label><input type="radio" name="q2"><span>水着を自己処理で焦らず着たい</span></label>
+            <label><input type="radio" name="q2"><span>お泊まり前にバタバタしたくない</span></label>
+            <label><input type="radio" name="q2"><span>夏服やノースリーブを楽しみたい</span></label>
+            <label><input type="radio" name="q2"><span>温泉・サウナで余計な不安を減らしたい</span></label>
+          </div>
+        </div>
+      </section>
 
-    <section class="check-band">
-      <p class="kicker">New Belief</p>
-      <h2>見るべきは「安さ」より、先に確認できる安心材料。</h2>
-      <p>脱毛選びで大事なのは、安い広告に飛びつくことではなく、不安を残したまま契約しないこと。無料カウンセリングで次の4つを確認できると、判断しやすくなります。</p>
-      <ul class="check-grid">
-        <li><span>01</span>総額と支払い条件</li>
-        <li><span>02</span>顔・VIOを含む施術範囲</li>
-        <li><span>03</span>痛みや通うペースの目安</li>
-        <li><span>04</span>予約の空き枠と通いやすさ</li>
-      </ul>
-    </section>
+      <section class="survey-section" id="sec3" style="padding-top:0;">
+        <img src="assets/img06b_price_trap_explain_image2.png" alt="安い全身脱毛の落とし穴。顔やVIOが別料金だと気になる部位が残ることもあり、夏前は顔+VIOまで込みかを見るべきと伝える画像" class="article-img">
+        <div class="q-content">
+          <img src="assets/q3_label.svg" alt="Question 3" class="qimg">
+          <h2 class="q-ttl">全身脱毛するなら、<br>外せない条件はどれですか？</h2>
+          <img src="assets/bg_q3_condition_check_real.png" alt="カウンセリングで顔、VIO、総額、痛み、通い方などの条件を確認しているイメージ画像" class="article-img">
+          <div class="options">
+            <label><input type="radio" name="q3"><span>顔+VIOまで込みで全身できる</span></label>
+            <label><input type="radio" name="q3"><span>料金・通い方を先に確認できる</span></label>
+            <label><input type="radio" name="q3"><span>痛みや肌状態を相談できる</span></label>
+            <label><input type="radio" name="q3"><span>相談しやすい雰囲気がある</span></label>
+          </div>
+        </div>
+      </section>
 
-    <section class="proof">
-      <p class="kicker">Why LACOCO</p>
-      <h2>ラココで確認したいポイント</h2>
-      <div class="proof-list">
-        <article>
-          <h3>1. ルミクス脱毛の説明を受けられる</h3>
-          <p>方式や痛みの感じ方は人によって違います。広告だけで決めず、自分の肌・毛質・通えるペースで相談するのが安全です。</p>
-        </article>
-        <article>
-          <h3>2. 顔・VIO・全身の範囲を先に確認できる</h3>
-          <p>「どこまで入るのか」は後悔ポイントになりやすい部分。気になる部位を最初に言語化して、プランとのズレを減らします。</p>
-        </article>
-        <article>
-          <h3>3. 契約前の不安を質問できる</h3>
-          <p>総額、追加費用、予約の取りやすさ、途中で通えなくなった時の扱い。ここを曖昧にしないことが、予約後の納得感につながります。</p>
-        </article>
-      </div>
-    </section>
+      <section class="survey-section" id="sec4">
+        <img src="assets/img07a_lacoco_many_people_image2.png" alt="夏前にラココをチェックする人もいること、水着やお泊まりで自己処理に焦る前に顔+VIO込みや全身相談を確認できることを伝える画像" class="article-img">
+        <img src="assets/img07_lacoco_conditions_image2.png" alt="そこで候補に入れたいのがラココ。顔+VIO込み、全身脱毛2回、総額39,600円税込、痛みや通い方も相談できることを伝える画像" class="article-img">
+        <div class="q-content">
+          <img src="assets/q4_label.svg" alt="Question 4" class="qimg">
+          <h2 class="q-ttl">ラココの脱毛で、<br>全身すっきりを目指しますか？</h2>
+          <img src="assets/img08_image2_booking.png" alt="ラココの脱毛で全身すっきり脱毛する。顔+VIO込みの全身脱毛をチェックし、無料カウンセリングへ進む画像" class="article-img">
+          <div class="options" style="padding-top:20px;">
+            <label><input type="radio" name="q4" value="yes"><span>はい、全身すっきり脱毛したい</span></label>
+            <label><input type="radio" name="q4" value="yes"><span>まずは顔+VIO込みで相談したい</span></label>
+          </div>
+        </div>
+      </section>
 
-    <section class="qa">
-      <p class="kicker">Last Objection</p>
-      <h2>予約直前に残りやすい不安</h2>
-      <details open>
-        <summary>月額が安い広告って、結局高いのでは？</summary>
-        <p>月額だけで判断せず、総額・支払い回数・対象範囲・追加費用を確認してください。このLPでは、カウンセリング前の期待値を上げすぎないため、価格の断定は避けています。</p>
-      </details>
-      <details>
-        <summary>痛みや効果が不安です。</summary>
-        <p>痛みや実感には個人差があります。断定表現ではなく、自分の肌状態・毛質・希望部位に合わせて相談する導線にしています。</p>
-      </details>
-      <details>
-        <summary>VIOの相談が恥ずかしいです。</summary>
-        <p>恥ずかしさは自然です。だからこそ、いきなり契約ではなく、相談しやすさ・説明の丁寧さ・店舗の雰囲気を見て判断する流れにしています。</p>
-      </details>
-      <details>
-        <summary>カウンセリングに行ったら契約しないといけない？</summary>
-        <p>確認したいことを先にメモして、納得できない点があれば持ち帰る前提で大丈夫です。CTAも「契約」ではなく「総額と空き枠の確認」に寄せています。</p>
-      </details>
-    </section>
+      <section class="survey-section no-bd" id="sec6">
+        <div id="res-yes" style="display:none;">
+          <img src="assets/img09_answer_thanks_image2_v2.png" alt="アンケート回答ありがとうございます。LACOCOでツルスベ肌へ、夏前に全身すっきりを目指そうと伝える画像" class="article-img">
+          <img src="assets/img10_coupon_image2.png" alt="夏前限定案内。顔+VIO込み全身脱毛2回、総額39,600円税込、無料カウンセリング受付中と伝える画像" class="article-img">
+          <img src="assets/img11_booking_steps_image2.png" alt="予約はかんたん3ステップ。フォーム入力、近くの店舗を選ぶ、無料カウンセリングで相談、スマホでそのまま進めると伝える画像" class="article-img">
+          <a href="https://form.la-coco.com/yoyaku/index.html?service=13795" target="_blank" rel="noopener" class="cta"><img src="assets/cta_sukkiri_lacoco_image2.png" alt="ラココの脱毛で全身すっきり脱毛する" class="cta-img"></a>
 
-    <section class="cta-section">
-      <img src="https://la-coco.com/media_adg/images/MAG_list_2025summer_img01.webp" alt="LACOCO official campaign visual reference">
-      <div class="cta-copy">
-        <p class="kicker">Free Counseling</p>
-        <h2>迷っているなら、まずは「契約するか」ではなく「不安が消えるか」を見に行く。</h2>
-        <p>総額、範囲、痛み、通いやすさ。予約前に止まっていた理由を、ひとつずつ確認してから決めましょう。</p>
-        <a class="cta-button" href="https://la-coco.com/reservation/" target="_blank" rel="noopener">無料カウンセリングで、総額と空き枠だけ確認する</a>
-        <p class="note">価格・キャンペーン・店舗情報は変更される可能性があります。公開前に公式情報または提供資料で最新確認が必要です。</p>
-      </div>
-    </section>
+          <div class="inner">
+            <img src="assets/ttl_faq.svg" alt="よくある質問" class="qimg">
+            <section class="accordion">
+              <input id="block-01" type="checkbox" class="toggle">
+              <label class="Label" for="block-01"><div class="box"><span class="q-icon">Q</span><p>VIOだけ相談するのが恥ずかしいです。</p></div></label>
+              <div class="content"><p class="qa-txt">VIOだけを単体で聞くのではなく、顔+VIO込みの全身脱毛としてまとめて相談する流れが自然です。水着・宿泊・夏服で気になる部位を一度に確認できます。</p></div>
 
-    <footer class="footer">
-      <p>Draft for internal review. Official assets are reference-only until rights/usage approval is confirmed.</p>
-    </footer>
+              <input id="block-02" type="checkbox" class="toggle">
+              <label class="Label" for="block-02"><div class="box"><span class="q-icon">Q</span><p>顔やVIOは含まれますか？</p></div></label>
+              <div class="content"><p class="qa-txt">ラココ公式LPでは「顔+VIOを含む全身脱毛2回 総額39,600円(税込)」のキャンペーンが案内されています。詳細は予約フォームや無料カウンセリングで確認できます。</p></div>
+
+              <input id="block-03" type="checkbox" class="toggle">
+              <label class="Label" for="block-03"><div class="box"><span class="q-icon">Q</span><p>痛みが不安です。</p></div></label>
+              <div class="content"><p class="qa-txt">公式LPでは痛みへの配慮も紹介されています。感じ方には個人差があるため、肌状態や不安な部位を無料カウンセリングで相談できます。</p></div>
+
+              <input id="block-04" type="checkbox" class="toggle">
+              <label class="Label" for="block-04"><div class="box"><span class="q-icon">Q</span><p>カウンセリングだけでも大丈夫？</p></div></label>
+              <div class="content"><p class="qa-txt">まずは料金、対象部位、通い方、予約条件を確認する目的でも相談できます。夏前に動くなら、先に相談しておくと予定に合わせやすくなります。</p></div>
+            </section>
+          </div>
+
+          <img src="assets/img07_lacoco_conditions_image2.png" alt="顔+VIO込み、全身脱毛2回、総額39,600円税込、痛みや通い方も相談できるラココのオファー画像" class="article-img">
+          <a href="https://form.la-coco.com/yoyaku/index.html?service=13795" target="_blank" rel="noopener" class="cta"><img src="assets/cta_sukkiri_lacoco_image2.png" alt="ラココの脱毛で全身すっきり脱毛する" class="cta-img"></a>
+          <p class="note">※キャンペーン内容・条件は時期により異なる場合があります。詳細は公式ページでご確認ください。</p>
+        </div>
+      </section>
+    </div>
   </main>
-  <script src="./main.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const radioButtons = document.querySelectorAll('.options input[type="radio"]');
+
+      radioButtons.forEach((radio) => {
+        radio.addEventListener("change", function () {
+          const currentSection = this.closest(".survey-section");
+          const nextSection = currentSection ? currentSection.nextElementSibling : null;
+          const group = currentSection ? currentSection.querySelectorAll(`input[name="${this.name}"]`) : [];
+
+          group.forEach((item) => {
+            const label = item.closest("label");
+            if (label) label.classList.toggle("selected", item === this);
+          });
+
+          if (this.name === "q4") {
+            const resYes = document.getElementById("res-yes");
+            if (resYes) resYes.style.display = "block";
+          }
+
+          if (nextSection && nextSection.classList.contains("survey-section")) {
+            nextSection.classList.add("active");
+
+            setTimeout(() => {
+              const rect = nextSection.getBoundingClientRect();
+              window.scrollTo({
+                top: window.pageYOffset + rect.top,
+                behavior: "smooth"
+              });
+            }, 300);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
+
