@@ -292,39 +292,11 @@
       font-size: 1.05rem;
       line-height: 1.55;
     }
-    .source-card {
-      margin: 14px 0 18px;
-      padding: 16px 12px;
-      border: 2px solid #ffd3e3;
-      background: #fff8fb;
-    }
-    .source-card h3 {
-      margin-bottom: 10px;
-      color: #e60058;
-      text-align: center;
-      font-size: 1.65rem;
-      line-height: 1.35;
-      font-weight: 900;
-    }
-    .source-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .source-list li {
-      position: relative;
-      margin-bottom: 8px;
-      padding-left: 1.4em;
-      font-size: 1.35rem;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-    .source-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #ff5e78;
-      font-weight: 900;
+    .image-note {
+      margin: 8px 0 16px;
+      color: #666;
+      font-size: 1.02rem;
+      line-height: 1.55;
     }
     .toggle { display: none; }
     .Label {
@@ -399,7 +371,7 @@
 </head>
 <body>
   <main id="survey-container">
-    <header class="fv" style="width:100.5%;">
+    <header class="fv">
       <div class="fv-art">
         <img src="assets/lacoco_fv_generated_trace_cli_simple.png" alt="ラココ夏前30秒診断。たった4問のアンケート回答で、顔+VIO込みの全身脱毛をチェックできるファーストビュー。" class="fv-main">
       </div>
@@ -449,9 +421,8 @@
         <div class="q-content">
           <img src="assets/q3_label.svg" alt="Question 3" class="qimg">
           <h2 class="q-ttl">ラココの全身脱毛で、<br>魅力的だと思うポイントはどれですか？</h2>
-          <img src="assets/official_lumix_wshot_vio.jpg" alt="ラココ公式LPで紹介されているLUMIX-A9X、2つの波長のW照射、SHR方式、VIO特化型波長の説明。" class="article-img">
-          <img src="assets/official_lumix_five_points.jpg" alt="ラココ公式LPで紹介されている価格、脱毛パワー、痛みへの配慮、効果実感、施術時間の5つのポイント。" class="article-img">
-          <p class="note">※上記は公式LPで紹介されている内容です。効果・痛みの感じ方・通えるペースには個人差があり、肌状態や対象条件は無料カウンセリングで確認できます。</p>
+          <img src="assets/q3_condition_real_manga_v2.png" alt="VIOだけ聞くより、顔+VIO込み、総額・回数、痛み・通い方までまとめて確認できると伝える画像" class="article-img">
+          <p class="image-note">※効果・痛みの感じ方・通えるペースには個人差があります。LUMIX脱毛の特徴や肌状態は無料カウンセリングで確認できます。</p>
           <div class="options">
             <label><input type="radio" name="q3"><span>顔+VIOまで込みで全身できる</span></label>
             <label><input type="radio" name="q3"><span>LUMIX-A9XやVIO特化型波長を確認できる</span></label>
@@ -463,9 +434,6 @@
 
       <section class="survey-section" id="sec4">
         <img src="assets/img07a_lacoco_many_people_image2.png" alt="夏前にラココをチェックする人もいること、水着やお泊まりで自己処理に焦る前に顔+VIO込みや全身相談を確認できることを伝える画像" class="article-img">
-        <img src="assets/official_parts_52_face_vio.jpg" alt="ラココ公式LPで紹介されている、顔・VIO込み、全身52箇所、体41パーツ、顔11パーツの照射範囲。" class="article-img">
-        <img src="assets/official_offer_90campaign_clean.jpg" alt="ラココ公式LPの90店舗記念キャンペーン。満18〜35歳限定、顔・VIO込み、全身脱毛6+1回、月額1,500円、総額56,712円の案内。" class="article-img">
-        <p class="note">※キャンペーンは2026年6月16日まで、満18〜35歳の方など条件があります。月額表示には分割支払い条件があります。</p>
         <div class="q-content">
           <img src="assets/q4_label.svg" alt="Question 4" class="qimg">
           <h2 class="q-ttl">ラココの90店舗記念キャンペーンを、<br>無料カウンセリングで確認してみますか？</h2>
@@ -481,7 +449,7 @@
       <section class="survey-section no-bd" id="sec6">
         <div id="res-yes" style="display:none;">
           <img src="assets/img09_answer_thanks_image2_v2.png" alt="アンケート回答ありがとうございます。LACOCOでツルスベ肌へ、夏前に全身すっきりを目指そうと伝える画像" class="article-img">
-          <img src="assets/official_offer_90campaign_clean.jpg" alt="90店舗記念キャンペーン。顔・VIO込み、全身脱毛6+1回、月額1,500円、総額56,712円の公式LP案内。" class="article-img">
+          <a href="https://form.la-coco.com/yoyaku/index.html?service=13795" target="_blank" rel="noopener" class="cta"><img src="assets/fix_btn.png" alt="ラココ90店舗記念キャンペーン。顔・VIO込み、全身脱毛6+1回、無料カウンセリングを予約。" class="cta-img"></a>
           <img src="assets/img11_booking_steps_image2.png" alt="予約はかんたん3ステップ。フォーム入力、近くの店舗を選ぶ、無料カウンセリングで相談、スマホでそのまま進めると伝える画像" class="article-img">
           <a href="https://form.la-coco.com/yoyaku/index.html?service=13795" target="_blank" rel="noopener" class="cta"><img src="assets/fix_btn.png" alt="ラココ90店舗記念キャンペーン。顔・VIO込み、全身脱毛6+1回、無料カウンセリングを予約。" class="cta-img"></a>
           <p class="note">※月額1,500円(税込)は分割支払いの一例です。キャンペーンは満18〜35歳の方、初めてカウンセリングを受けられる方など条件があります。詳細は公式ページでご確認ください。</p>
@@ -495,11 +463,11 @@
 
               <input id="block-02" type="checkbox" class="toggle">
               <label class="Label" for="block-02"><div class="box"><span class="q-icon">Q</span><p>顔やVIOは含まれますか？</p></div></label>
-              <div class="content"><p class="qa-txt">ラココ公式LPでは、満18〜35歳の方限定の90店舗記念キャンペーンとして、顔・VIO込みの全身脱毛6+1回、月額1,500円(税込)、総額56,712円(税込)の案内が掲載されています。詳細条件は公式ページで確認できます。</p></div>
+              <div class="content"><p class="qa-txt">現在のキャンペーンページでは、満18〜35歳の方限定の90店舗記念キャンペーンとして、顔・VIO込みの全身脱毛6+1回、月額1,500円(税込)、総額56,712円(税込)の案内があります。詳細条件は公式ページで確認できます。</p></div>
 
               <input id="block-03" type="checkbox" class="toggle">
               <label class="Label" for="block-03"><div class="box"><span class="q-icon">Q</span><p>LUMIX脱毛は何が違いますか？</p></div></label>
-              <div class="content"><p class="qa-txt">公式LPでは、LUMIX-A9X、2つの波長のW照射、SHR方式、VIO特化型波長などが紹介されています。痛みや効果の感じ方には個人差があるため、肌状態や不安な部位を無料カウンセリングで相談できます。</p></div>
+              <div class="content"><p class="qa-txt">キャンペーンページでは、LUMIX-A9X、2つの波長のW照射、SHR方式、VIO特化型波長などが紹介されています。痛みや効果の感じ方には個人差があるため、肌状態や不安な部位を無料カウンセリングで相談できます。</p></div>
 
               <input id="block-04" type="checkbox" class="toggle">
               <label class="Label" for="block-04"><div class="box"><span class="q-icon">Q</span><p>カウンセリングだけでも大丈夫？</p></div></label>
@@ -507,8 +475,7 @@
             </section>
           </div>
 
-          <img src="assets/official_skin_store_benefits.jpg" alt="オールスキンOK、美肌ケア、全国約90店舗など、ラココ公式LPで紹介されている安心材料。" class="article-img">
-          <img src="assets/official_offer_90campaign_clean.jpg" alt="90店舗記念キャンペーンのオファー再掲。顔・VIO込み、全身脱毛6+1回、月額1,500円、総額56,712円。" class="article-img">
+          <img src="assets/img08_booking_real_manga_v2.png" alt="まずは空き枠だけ確認してみよう。顔+VIO込み、総額・回数、痛み・通い方を確認し、無料カウンセリングへ進む画像" class="article-img">
           <a href="https://form.la-coco.com/yoyaku/index.html?service=13795" target="_blank" rel="noopener" class="cta"><img src="assets/fix_btn.png" alt="無料カウンセリングを予約。顔・VIO込み、全身脱毛6+1回、90店舗記念キャンペーン。" class="cta-img"></a>
           <p class="note">※キャンペーン内容・条件は時期により異なる場合があります。月額表示には分割支払い条件があります。対象年齢、期間、初回カウンセリング限定などの詳細は公式ページでご確認ください。</p>
         </div>
