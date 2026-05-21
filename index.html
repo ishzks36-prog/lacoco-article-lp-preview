@@ -26,6 +26,15 @@
       position: relative;
       background: #fff;
     }
+    .fv-start {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .fv-start:focus-visible {
+      outline: 4px solid #ff5e78;
+      outline-offset: -8px;
+    }
     .fv-main {
       width: 94%;
       height: auto;
@@ -265,6 +274,10 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-6px); }
     }
+    @media (prefers-reduced-motion: reduce) {
+      .cta { animation: none; }
+      .survey-section { transition: none; }
+    }
     .offer {
       margin: 12px 0;
       padding: 14px;
@@ -373,7 +386,9 @@
   <main id="survey-container">
     <header class="fv">
       <div class="fv-art">
-        <img src="assets/lacoco_fv_generated_trace_cli_simple.png" alt="ラココ夏前30秒診断。たった4問のアンケート回答で、顔+VIO込みの全身脱毛をチェックできるファーストビュー。" class="fv-main">
+        <a href="#sec1" class="fv-start" aria-label="診断を始める">
+          <img src="assets/lacoco_fv_generated_trace_cli_simple.png" alt="ラココ夏前30秒診断。たった4問のアンケート回答で、顔+VIO込みの全身脱毛をチェックできるファーストビュー。" class="fv-main">
+        </a>
       </div>
     </header>
 
